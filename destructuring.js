@@ -22,6 +22,7 @@ var carDetails = {
 */
 
 //Code Here
+let {color, make, model, year} = carDetails;
 
 
 
@@ -35,7 +36,7 @@ var carDetails = {
 
 function greeting( obj ) {
   //Code Here
-  
+  let {firstName, lastName, title} = obj;
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
@@ -54,7 +55,13 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function totalPopulation(obj){
+  let {utah, california, texas, arizona} = obj;
+  let numArr = [utah, california, texas, arizona];
+  return numArr.reduce(function(a,b){
+    return a + b;
+  })
+} 
 
 
 ////////// PROBLEM 4 //////////
@@ -68,7 +75,12 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function ingredients(obj){
+  let {carb, fat, protein} = obj;
+  let arr = [];
+  arr.push(carb, fat, protein);
+  return arr;
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -86,6 +98,11 @@ function greeting( obj ) {
 */
 
 //Code Here
+function largeNumbers(obj){
+  let {first, second, third} = obj;
+  let arr = [first, second, third];
+  return Math.min.apply(null, arr);
+}
 
 
 
@@ -98,5 +115,18 @@ function greeting( obj ) {
 */
 
 //Code Here
+function numberGroups(obj){
+  let {a,b,c} = obj;
+  let arr = [a,b,c];
+  let longest = [];
+ for(let i = 0; i < arr.length; i ++){
+   if(arr[i].length > longest.length){
+     longest = [];
+     longest.push(...arr[i]);
+   }
+ }
+ console.log(longest);
+ return longest;
+}
 
 
